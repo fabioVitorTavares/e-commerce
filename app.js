@@ -14,4 +14,3 @@ app.get("/index", (request, response) => {
 app.listen(4002, () =>{
     console.log("Server rodando na porta 4002");
 });
-
