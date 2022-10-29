@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "e-commerce plataform",
   "main": "index.js",
+  
   "scripts": {
     "dev": "nodemon app.js",
     "serv": "nodemon server.js"
