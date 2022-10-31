@@ -33,6 +33,8 @@ const products = [
 ];
 
 
+app.use(express.static(__dirname));
+
 
 app.post("/", (req, res) => {     
     const nameProduct = req.body.name;

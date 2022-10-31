@@ -2,9 +2,26 @@
     margin: 0;
 }
 
+body {
+}
+
+header {
+    width: 100vw;
+    height: 100px;
+    background-color: lightgrey;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;   
+}
+
 main {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: aqua;
 }
 
 .img {
