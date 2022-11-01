@@ -1,8 +1,46 @@
 * {
     margin: 0;
+    box-sizing: border-box;
 }
 
-body {
+.form-search { 
+    background-color: white;
+    height: 40px;
+    width: 50%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.input-search { 
+    background-color: white;
+    border: none;
+    height: 100%; 
+    width: 100%;   
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.input-search:focus-visible {
+    outline: none;
+}
+
+
+
+.button-clear, .button-search{
+    background-color: white;
+    height: 100%;
+    border: none;
+    border-radius: 5px;
+}
+
+/* .button-clear {
+    display: none;
+} */
+
+.button-search img:hover, .button-clear img:hover {
+    width: 28px;
 }
 
 header {
@@ -38,3 +76,4 @@ main {
 .product {
     margin: 5px;
 }
+

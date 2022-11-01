@@ -52,4 +52,3 @@ buttonSearch.addEventListener('click', async () => {
 
 });
 
-
