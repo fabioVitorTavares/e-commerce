@@ -11,6 +11,7 @@
     display: flex;
     flex-direction: row;
     justify-content: end;
+    border: 0.5px solid lightslategray;
 }
 
 .input-search { 
@@ -35,18 +36,18 @@
     border-radius: 5px;
 }
 
-/* .button-clear {
+.button-clear {
     display: none;
-} */
+}
 
 .button-search img:hover, .button-clear img:hover {
-    width: 28px;
+    width: 22px;
 }
 
 header {
     width: 100vw;
     height: 100px;
-    background-color: lightgrey;
+    /* background-color: lightgrey; */
 
     display: flex;
     flex-direction: row;
@@ -54,13 +55,6 @@ header {
     align-items: center;   
 }
 
-main {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    background-color: aqua;
-}
 
 .img {
     width: 200px;
@@ -77,3 +71,26 @@ main {
     margin: 5px;
 }
 
+
+main {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+    
+    
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    /* background-color: aqua; */
+}
+
+.filters {
+    background-color: lightslategray;
+    width: 100px;
+    height: 50%;
+    border: 1px solid black;
+}

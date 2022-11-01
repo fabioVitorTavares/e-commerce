@@ -1,5 +1,7 @@
-const buttonSearch = document.querySelector("#buttonSearch");
-const nameProduct = document.querySelector('#nameProduct');
+const buttonSearch = document.querySelector(".button-search");
+const inputSearch = document.querySelector('.input-search');
+const buttonClear = document.querySelector('.button-clear');
+
 
 const url = "http://127.0.0.1:4002/";
 
@@ -8,8 +10,7 @@ const url = "http://127.0.0.1:4002/";
 
 
 
-const main = document.querySelector('#main');
-
+const main = document.querySelector('.main');
 
 buttonSearch.addEventListener('click', async () => {
 
@@ -17,7 +18,7 @@ buttonSearch.addEventListener('click', async () => {
     const response = await fetch(url, {   
         method: 'POST',
         body: JSON.stringify({
-            name: `${nameProduct.value}`            
+            name: `${inputSearch.value}`            
         }),
         headers: {"Content-type": "application/json"}
     });
@@ -43,12 +44,17 @@ buttonSearch.addEventListener('click', async () => {
         main.appendChild(classProduct);
         
     });
-    
-    
-
-
-
-
-
 });
+
+inputSearch.addEventListener("input", () => {   
+    
+    buttonClear.style = inputSearch.value === "" ? "Display: none" : "Display: block";
+});
+
+buttonClear.addEventListener("click", () => {
+    inputSearch.value = "";
+    buttonClear.style = inputSearch.value === "" ? "Display: none" : "Display: block";
+    inputSearch.focus();
+});
+
 
