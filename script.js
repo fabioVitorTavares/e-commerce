@@ -10,7 +10,7 @@ const url = "http://127.0.0.1:4002/";
 
 
 
-const main = document.querySelector('.main');
+const content = document.querySelector('.content');
 
 buttonSearch.addEventListener('click', async () => {
 
@@ -41,7 +41,7 @@ buttonSearch.addEventListener('click', async () => {
         classProduct.appendChild(classInfos);
         classInfos.appendChild(name);
         classInfos.appendChild(price);
-        main.appendChild(classProduct);
+        content.appendChild(classProduct);
         
     });
 });
