@@ -58,3 +58,4 @@ buttonClear.addEventListener("click", () => {
 });
 
 
+console.log(document.querySelector('.sumary'));
