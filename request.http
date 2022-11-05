@@ -1,0 +1,44 @@
+POST http://localhost:4002/
+Content-Type: application/json
+
+{
+    "name": "Caneta lilás",
+    "price": 3
+}
+
+###
+POST http://localhost:4002/products
+Content-Type: application/json
+
+{
+    "name": "Caneta preta",
+    "price": 3
+}
+
+###
+POST http://localhost:4002/products
+Content-Type: application/json
+
+{
+    "name": "Caneta azul",
+    "price": 3
+}
+
+###
+
+GET http://localhost:4002/products
+
+###
+
+PUT  http://localhost:4002/products/064b259e-e777-4a49-8cf8-e8a7cb180b6f
+Content-Type: application/json
+
+{
+    "name": "Caneta lilás e roxo",
+    "price": 9000
+}
+
+###
+DELETE   http://localhost:4002/products/7b318c75-4d7c-4b3c-9f8f-71e6fa9ab3ee
+Content-Type: application/json
+
