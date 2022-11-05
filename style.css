@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    width: 100vw;
+    height: 20vh;
+    background-color: lightgrey;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;   
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100vw;
+    height: 80vh;    
+}
+
+.content {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 7.5px;  
+    border: 1px solid black;
+    overflow-y: scroll;
+}
+
+
+
+.filters {    
+    width: 200px;
+    height: 80vh;
+    border: 1px solid black;
+}
+
+/* =================================== */
+
+.form-search { 
+    background-color: white;
+    height: 40px;
+    width: 50%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    border: 0.5px solid lightslategray;
+}
+
+.input-search { 
+    background-color: white;
+    border: none;
+    height: 100%; 
+    width: 100%;   
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.input-search:focus-visible {
+    outline: none;
+}
+
+.button-clear, .button-search{
+    background-color: white;
+    height: 100%;
+    border: none;
+    border-radius: 5px;
+}
+
+.button-clear {
+    display: none;
+}
+
+.button-search img:hover, .button-clear img:hover {
+    width: 22px;
+}
+
+/* ================================================== */
+
+
+
+.product {
+    border: 0.1px solid black;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    width: 200px;
+    height: 200px;
+    margin: 15px;
+
+   /*  */
+    
+}
+
+
+
+.product .view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;  
+}
+
+.product img {
+    width: 100%;   
+}
+    
+.product .description {
+    height: 20%;   
+}
+
+.sumary {
+    
+}
+
+.sumary::marker {    
+    position: absolute;    
+    color: brown;
+}
