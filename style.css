@@ -1,6 +1,9 @@
+
+
 * {
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Maven Pro', sans-serif;
 }
 
 body {
@@ -36,7 +39,6 @@ main {
     flex-wrap: wrap;
     align-items: center;
     padding: 7.5px;  
-    border: 1px solid black;
     overflow-y: scroll;
 }
 
@@ -45,7 +47,10 @@ main {
 .filters {    
     width: 200px;
     height: 80vh;
-    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
 }
 
 /* =================================== */
@@ -94,7 +99,6 @@ main {
 
 
 .product {
-    border: 0.1px solid black;
     display: flex;
     flex-direction: column;
     border-radius: 5px;
@@ -123,11 +127,41 @@ main {
     height: 20%;   
 }
 
-.sumary {
-    
+/*
+Filter
+*/
+
+.filters {
+    padding-left: 10px;
 }
 
-.sumary::marker {    
-    position: absolute;    
-    color: brown;
+.container-filter {
+    width: 100%;    
+}
+
+.group-filter {
+    flex-direction: column;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.group-filter-container {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.group-filter-container input {
+    position: relative;
+    right: 0px;
+}
+
+.group-filter-container input[type=number] {
+    width: 70px;
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
 }

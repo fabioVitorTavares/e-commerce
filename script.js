@@ -12,17 +12,24 @@ const url = "http://127.0.0.1:4002/";
 
 const content = document.querySelector('.content');
 
-buttonSearch.addEventListener('click', async () => {
+buttonSearch.addEventListener('click', () => {  
 
+    fetch(url + `products/${inputSearch.value}`)
+    .then(function(response){
 
-    const response = await fetch(url, {   
-        method: 'POST',
-        body: JSON.stringify({
-            name: `${inputSearch.value}`            
-        }),
-        headers: {"Content-type": "application/json"}
+        console.log(response);
     });
-    const datas = await response.json();
+
+   /*  const response = await fetch(url + `products/${inputSearch.value}`,{
+        method: "GET",
+        mode: "no-cors"
+    }); */
+
+    
+
+  
+
+   /*  const datas = await response.json();
     
     
     datas.forEach(element => {
@@ -43,7 +50,7 @@ buttonSearch.addEventListener('click', async () => {
         classInfos.appendChild(price);
         content.appendChild(classProduct);
         
-    });
+    }); */
 });
 
 inputSearch.addEventListener("input", () => {   
