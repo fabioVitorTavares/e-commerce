@@ -10,11 +10,32 @@ app.use("/",express.static(__dirname));
 
 
 const products = [{
-    img: "",
+    img: "https://cdn.pixabay.com/photo/2016/10/12/13/32/office-1734485_960_720.jpg",
     description: "Notebook lenovo i5",
     category: "Notebook",
     brand: "Lenovo",
     price: 2459.00    
+},
+{
+    img: "https://cdn.pixabay.com/photo/2016/10/12/13/32/office-1734485_960_720.jpg",
+    description: "Notebook Dell i7",
+    category: "Notebook",
+    brand: "Dell",
+    price: 1000.00    
+},
+{
+    img: "https://cdn.pixabay.com/photo/2016/10/12/13/32/office-1734485_960_720.jpg",
+    description: "Notebook Sansung i5",
+    category: "Notebook",
+    brand: "Sansung",
+    price: 3000.00    
+},
+{
+    img: "https://cdn.pixabay.com/photo/2016/10/12/13/32/office-1734485_960_720.jpg",
+    description: "IPhone 13",
+    category: "Smartphone",
+    brand: "Aple",
+    price: 12000.00    
 }];
 
 

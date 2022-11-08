@@ -12,60 +12,48 @@ const url = "http://127.0.0.1:4002/";
 
 const content = document.querySelector('.content');
 
-// buttonSearch.addEventListener('click',( async () => {
-//     const response = await fetch(url+'products', {
-//       method: 'get',      
-//       headers: {
-//         'Accept': 'application/json',
-//         'Content-Type': 'application/json',
-        
-//       }      
-//     });
-//     const content = await response.json();
-  
-//     console.log(content);
-// }));
-
 buttonSearch.addEventListener('click',( async () => {
-    const response = await fetch(url, {
-      method: 'post',      
-      headers: {
+    const response = await fetch(url+'products', {
+        method: 'get',      
+        headers: {
         'Accept': 'application/json',
-        'Content-Type': 'application/json'        
-      },
-      body: JSON.stringify({
-        nome: 'Fábio',
-        idade: 26
-      })      
-
+        'Content-Type': 'application/json',
+        
+      }      
     });
-    const content = await response.json();
+    const data = await response.json();
   
-    console.log(content);
+    console.log(data);
+    data.forEach(element => {
+      const classProduct = document.createElement('div');
+      const classViewProduct = document.createElement('div');
+      const classDescriptionProduct = document.createElement('div');
+      const imgProduct = document.createElement('img');
+      const descriptionProduct = document.createElement('p');
+      const priceProduct = document.createElement('p');
+      classProduct.setAttribute('class', 'product');
+      classViewProduct.setAttribute('class', 'view');
+      classDescriptionProduct.setAttribute('class', 'description');
+      imgProduct.setAttribute('src', `${element.img}`);
+      descriptionProduct.innerText = element.description;
+      priceProduct.innerHTML = `<p><strong>R$</strong> ${element.price},00 </p>`;
+
+      classProduct.appendChild(classViewProduct);
+      classProduct.appendChild(classDescriptionProduct);
+      classViewProduct.appendChild(imgProduct);
+      classDescriptionProduct.appendChild(descriptionProduct);  
+      classDescriptionProduct.appendChild(priceProduct);     
+      content.appendChild(classProduct);      
+  });
+
 }));
+
+
 
    /*  const datas = await response.json();
     
     
-    datas.forEach(element => {
-        let classProduct = document.createElement('div');
-        classProduct.setAttribute('class', 'product');
-        let classImg = document.createElement('div');
-        classImg.setAttribute('class', 'img');
-        let classInfos = document.createElement('div');
-        classInfos.setAttribute('class', 'infos');
-        let name = document.createElement('h2');
-        name.innerText = element.name;
-        let price = document.createElement('h2');
-        price.innerText = element.price;
-        
-        classProduct.appendChild(classImg);
-        classProduct.appendChild(classInfos);
-        classInfos.appendChild(name);
-        classInfos.appendChild(price);
-        content.appendChild(classProduct);
-        
-    }); */
+     */
 
 
 inputSearch.addEventListener("input", () => {   
