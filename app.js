@@ -14,7 +14,7 @@ const products = [{
     description: "Notebook lenovo i5",
     category: "Notebook",
     brand: "Lenovo",
-    price: 2459.00    
+    price: 2459.50    
 },
 {
     img: "https://cdn.pixabay.com/photo/2016/10/12/13/32/office-1734485_960_720.jpg",

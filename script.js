@@ -36,8 +36,13 @@ buttonSearch.addEventListener('click',( async () => {
       classDescriptionProduct.setAttribute('class', 'description');
       imgProduct.setAttribute('src', `${element.img}`);
       descriptionProduct.innerText = element.description;
-      priceProduct.innerHTML = `<p><strong>R$</strong> ${element.price},00 </p>`;
+      
+      
+      const formatedPrice = String(data.price).includes(".") ? String(data.price).replace(".",",") : String(data.price) + ",00";
 
+      priceProduct.innerHTML = `<p><strong>R$</strong> ${formatedPrice} </p>`;
+      console.log(formatedPrice);
+      
       classProduct.appendChild(classViewProduct);
       classProduct.appendChild(classDescriptionProduct);
       classViewProduct.appendChild(imgProduct);
