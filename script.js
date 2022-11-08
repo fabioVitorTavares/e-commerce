@@ -12,22 +12,37 @@ const url = "http://127.0.0.1:4002/";
 
 const content = document.querySelector('.content');
 
-buttonSearch.addEventListener('click', () => {  
-
-    fetch(url + `products/${inputSearch.value}`)
-    .then(function(response){
-
-        console.log(response);
-    });
-
-   /*  const response = await fetch(url + `products/${inputSearch.value}`,{
-        method: "GET",
-        mode: "no-cors"
-    }); */
-
-    
-
+// buttonSearch.addEventListener('click',( async () => {
+//     const response = await fetch(url+'products', {
+//       method: 'get',      
+//       headers: {
+//         'Accept': 'application/json',
+//         'Content-Type': 'application/json',
+        
+//       }      
+//     });
+//     const content = await response.json();
   
+//     console.log(content);
+// }));
+
+buttonSearch.addEventListener('click',( async () => {
+    const response = await fetch(url, {
+      method: 'post',      
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'        
+      },
+      body: JSON.stringify({
+        nome: 'Fábio',
+        idade: 26
+      })      
+
+    });
+    const content = await response.json();
+  
+    console.log(content);
+}));
 
    /*  const datas = await response.json();
     
@@ -51,7 +66,7 @@ buttonSearch.addEventListener('click', () => {
         content.appendChild(classProduct);
         
     }); */
-});
+
 
 inputSearch.addEventListener("input", () => {   
     
@@ -65,4 +80,3 @@ buttonClear.addEventListener("click", () => {
 });
 
 
-console.log(document.querySelector('.sumary'));

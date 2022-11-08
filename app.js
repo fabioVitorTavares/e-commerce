@@ -1,6 +1,9 @@
 const express = require("express");
 const app = express();
-app.use(express.json());
+const cors = require('cors');
+const { request, response } = require("express");
+app.use(cors());
+app.use(express.json())
 
 app.use("/",express.static(__dirname));
 
@@ -15,17 +18,16 @@ const products = [{
 }];
 
 
-app.get("/products/:search", (request, response) => {
-    const {search} = request.params;    
-    return response.json(products.filter( e => e.includes(search)));
+app.get("/products", (request, response) => {            
+    return response.json(products);
 }); 
 
+app.post("/", (request, response) => {
+    console.log(request.body);
+    response.json(request.body)    
+});
 
-/* app.get("/products", (request, response) => {
-    console.log(request.params);
-    
-    response.send(JSON.stringify(products.filter( e => e.includes(request.params.search))))
-}); */
+
 
 
 
