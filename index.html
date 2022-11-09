@@ -21,39 +21,51 @@
         <aside class="filters">
             <div class="container-filter"> 
                 <div class="group-filter">
-                    <p><strong>Categoria</strong></p>
-                    <div class="group-filter-container">
-                        <label>Desktop</label><input type="checkbox">
+                    <div class="title-group-filter">
+                        <p><strong>Categoria</strong></p>
+                        <button img='src="/img/x.svg"' id="button-clear-filter-category"></button>
                     </div>
                     <div class="group-filter-container">
-                        <label>Notebook</label><input type="checkbox">
+                        <label>Desktop</label><input value="Desktop" id="checkboxCategoryDesktop" type="checkbox">
                     </div>
                     <div class="group-filter-container">
-                        <label>Smartphone</label><input type="checkbox">
+                        <label>Notebook</label><input value="Notebook" id="checkboxCategoryNotebook" type="checkbox">
+                    </div>
+                    <div class="group-filter-container">
+                        <label>Smartphone</label><input value="Smartphone" id="checkboxCategorySmartphone" type="checkbox">
                     </div>
                 </div>               
                 <div class="group-filter">
-                    <p ><strong>Marca</p></strong>
+                    <div class="title-group-filter">
+                        <p ><strong>Marca</p></strong>
+                        <button img='src="/img/x.svg"' id="button-clear-filter-brand"></button>
+                    </div>                    
                     <div class="group-filter-container">
-                        <label>Apple</label><input type="checkbox">
+                        <label>Apple</label><input value="Apple" id="checkboxBrandApple" type="checkbox">
                     </div>
                     <div class="group-filter-container">
-                        <label>Dell</label><input type="checkbox">
+                        <label>Dell</label><input value="Dell" id="checkboxBrandDell" type="checkbox">
                     </div>
                     <div class="group-filter-container">
-                        <label>Sansung</label><input type="checkbox">
+                        <label>Lenovo</label><input value="Lenovo" id="checkboxBrandLenovo" type="checkbox">
                     </div>
                     <div class="group-filter-container">
-                        <label>Xiaomi</label><input type="checkbox">
+                        <label>Sansung</label><input value="Sansung" id="checkboxBrandSansung" type="checkbox">
+                    </div>
+                    <div class="group-filter-container">
+                        <label>Xiaomi</label><input value="Xiaomi" id="checkboxBrandXiaomi" type="checkbox">
                     </div>
                 </div>
                 <div class="group-filter">
-                    <p ><strong>Preço</p></strong> 
+                    <div class="title-group-filter">
+                        <p ><strong>Preço</p></strong> 
+                        <button img='src="/img/x.svg"' id="button-clear-filter-price"></button>
+                    </div>                    
                     <div class="group-filter-container">
-                        <p>De</p><input type="number">
+                        <p>De</p><input type="number" id="inputMinPrice">
                     </div>             
                     <div class="group-filter-container">
-                        Até <input type="number" name="" id="">
+                        Até <input type="number" id="inputMaxPrice">
                     </div>
                 </div>                                
             </div>
