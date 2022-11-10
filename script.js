@@ -72,6 +72,7 @@ const search = async () => {
       const descriptionProduct = document.createElement('p');
       const priceProduct = document.createElement('p');
       classProduct.setAttribute('class', 'product');
+      classProduct.setAttribute('onclick', 'focusProduct()')
       classViewProduct.setAttribute('class', 'view');
       classDescriptionProduct.setAttribute('class', 'description');
       imgProduct.setAttribute('src', `${element.img}`);
@@ -166,3 +167,17 @@ buttonClearFilterPrice.addEventListener('click', () => {
   buttonClearFilterPrice.style = "Display: none";
   search();
 });
+
+
+const main = document.querySelector('main');
+const header = document.querySelector('header');
+const product = document.querySelector('.product');
+
+function focusProduct() {
+  console.log('aqui ');
+  
+  main.style = "opacity: 0.4";
+  header.style = "opacity: 0.4";
+};
+
+

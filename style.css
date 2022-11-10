@@ -111,7 +111,7 @@ main {
 }
 
 .product:hover {
-    border: 0.5px solid lightgrey;
+    outline: 1px solid lightgrey;
 }
 
 
@@ -120,20 +120,17 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80%;  
+    height: 70%;  
 }
 
-.product img {
-    width: 100%;   
+.view img {
+    width: 100%;     
 }
     
 .product .description {
     height: 20%;   
 }
 
-/*
-Filter
-*/
 
 .filters {
     padding-left: 10px;
@@ -184,5 +181,10 @@ input[type=number]::-webkit-inner-spin-button {
     width: 25px;
     height: 25px;
     border: none;
+    display: none;
+}
+
+
+.view-details-product {
     display: none;
 }
