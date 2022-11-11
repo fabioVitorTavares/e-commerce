@@ -172,12 +172,22 @@ buttonClearFilterPrice.addEventListener('click', () => {
 const main = document.querySelector('main');
 const header = document.querySelector('header');
 const product = document.querySelector('.product');
+const viewDetailsProduct = document.querySelector( '.view-details-product');
 
-function focusProduct() {
-  console.log('aqui ');
+function focusProduct() {   
+  
+  viewDetailsProduct.style = "display: block";
   
   main.style = "opacity: 0.4";
   header.style = "opacity: 0.4";
 };
 
 
+document.addEventListener('mouseup', function(e) {
+  
+    if (!viewDetailsProduct.contains(e.target)) {
+        viewDetailsProduct.style.display = 'none';
+        main.style = "opacity: 1";
+        header.style = "opacity: 1";
+    }
+});
