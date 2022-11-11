@@ -21,11 +21,8 @@ client.connect( async(err) =>{
     const db = client.db(dbName);    
     const productsCollection = db.collection('productsCollection');
     await db.collection('productsCollection').find().toArray(function(err, result) {
-        [id, ...products] = result;
-        console.log(products);
-    });
-    //console.log(products);
-    
+        [id, ...products] = result;        
+    });    
 });
 
 app.get("/products", (request, response) => {
