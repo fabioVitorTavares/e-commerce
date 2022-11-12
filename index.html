@@ -9,8 +9,27 @@
     <title>E-commerce</title>
 </head>
 <body>
+
+    
     
     <div class="view-details-product">
+        <div class="detailsLeft">
+            <div class="contentDetailsLeft"></div>
+        </div>
+        <div class="detailsRight">            
+            <div class="calculo">
+                <h2>Calcular frete</h2>
+                <label>CEP<br>
+                    <input type="text" maxlength="8">
+                </label>
+                <button id="buttonFrete">CALCULAR FRETE</button>
+                <hp class="valorFrete"></p>
+            </div>
+            <div class="result">
+                <h2 class="valorTotal"></h2>
+                <button id="buttonComprar">COMPRAR</button>    
+            </div>            
+       </div>
     </div>
     <header>
         <div class="form-search">
@@ -76,6 +95,7 @@
                         
         </section>
     </main> 
+
     
 </body>
 <script src="script.js"></script>

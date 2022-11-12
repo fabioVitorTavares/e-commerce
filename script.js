@@ -62,8 +62,7 @@ const search = async () => {
    
     });
     const data = await response.json();
-    console.log(data);
-    
+        
     data.forEach(element => {
       const classProduct = document.createElement('div');
       const classViewProduct = document.createElement('div');
@@ -72,7 +71,7 @@ const search = async () => {
       const descriptionProduct = document.createElement('p');
       const priceProduct = document.createElement('p');
       classProduct.setAttribute('class', 'product');
-      classProduct.setAttribute('onclick', 'focusProduct()')
+      classProduct.setAttribute('ondblclick', 'focusProduct(this)')
       classViewProduct.setAttribute('class', 'view');
       classDescriptionProduct.setAttribute('class', 'description');
       imgProduct.setAttribute('src', `${element.img}`);
@@ -80,7 +79,7 @@ const search = async () => {
       const regEx = /,\d$/;
       let formatedPrice = String(element.price).includes(".") ? String(element.price).replace(".",",") : String(element.price) + ",00";
       formatedPrice = regEx.test(formatedPrice) ? formatedPrice + "0" : formatedPrice;            
-      priceProduct.innerHTML = `<p><strong>R$</strong> ${formatedPrice} </p>`;      
+      priceProduct.innerHTML = `<p class"priceElement"><strong>R$</strong> ${formatedPrice} </p>`;      
       classProduct.appendChild(classViewProduct);
       classProduct.appendChild(classDescriptionProduct);
       classViewProduct.appendChild(imgProduct);
@@ -168,26 +167,33 @@ buttonClearFilterPrice.addEventListener('click', () => {
   search();
 });
 
-
 const main = document.querySelector('main');
 const header = document.querySelector('header');
 const product = document.querySelector('.product');
 const viewDetailsProduct = document.querySelector( '.view-details-product');
+const contentDetailsLeft = document.querySelector('.contentDetailsLeft');
+const valueProduct = document.querySelector('.valorTotal');
 
-function focusProduct() {   
-  
-  viewDetailsProduct.style = "display: block";
-  
+function focusProduct(element) {   
+
+  viewDetailsProduct.style = "display: flex";  
   main.style = "opacity: 0.4";
   header.style = "opacity: 0.4";
+
+  contentDetailsLeft.innerHTML = element.innerHTML;
+  
+  let priceElement = element.innerText;
+  priceElement =  priceElement.slice(priceElement.indexOf('$')-1)
+  valueProduct.innerText = `TOTAL ${priceElement}`;
+  console.log(priceElement);
 };
 
 
 document.addEventListener('mouseup', function(e) {
-  
+
     if (!viewDetailsProduct.contains(e.target)) {
         viewDetailsProduct.style.display = 'none';
         main.style = "opacity: 1";
-        header.style = "opacity: 1";
+        header.style = "opacity: 1";       
     }
 });
