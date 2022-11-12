@@ -173,7 +173,7 @@ const product = document.querySelector('.product');
 const viewDetailsProduct = document.querySelector( '.view-details-product');
 const contentDetailsLeft = document.querySelector('.contentDetailsLeft');
 const valueProduct = document.querySelector('.valorTotal');
-
+let priceElement = "";
 function focusProduct(element) {   
 
   viewDetailsProduct.style = "display: flex";  
@@ -182,7 +182,7 @@ function focusProduct(element) {
 
   contentDetailsLeft.innerHTML = element.innerHTML;
   
-  let priceElement = element.innerText;
+  priceElement = element.innerText;
   priceElement =  priceElement.slice(priceElement.indexOf('$')-1)
   valueProduct.innerText = `TOTAL ${priceElement}`;
   console.log(priceElement);
@@ -190,10 +190,58 @@ function focusProduct(element) {
 
 
 document.addEventListener('mouseup', function(e) {
-
     if (!viewDetailsProduct.contains(e.target)) {
         viewDetailsProduct.style.display = 'none';
         main.style = "opacity: 1";
         header.style = "opacity: 1";       
+    }
+});
+
+
+
+const buttonFrete = document.querySelector('#buttonFrete');
+const inputCEP = document.querySelector('#inputCEP');
+const valorFrete = document.querySelector('#valorFrete');
+
+const fretes = {
+  AC: 200,
+  AL: 250,
+  AP: 145,
+  AM: 157,
+  BA: 190,
+  CE: 300,
+  DF: 120,
+  ES: 100,
+  GO: 120,
+  MA: 147,
+  MT: 180,
+  MS: 172,
+  MG: 50,
+  PA: 244,
+  PB: 334,
+  PR: 275,
+  PE:388,
+  PI:240,
+  RJ:229,
+  RN:369,
+  RS:178,
+  RO:137,
+  RR:126,
+  SC:134,
+  SP:122,
+  TO:351
+}
+
+buttonFrete.addEventListener('click', async () =>{        
+    const response = await fetch(`https://viacep.com.br/ws/${inputCEP.value}/json/`);
+    const data = await response.json();
+        
+    if(!data.erro){
+      console.log(data);
+      valorFrete.innerText = `Frete para ${data.localidade} - ${data.uf}: R$${fretes[data.uf]},00`;
+      const valorProduto = Number(priceElement.slice(priceElement.indexOf('$')+1).replace(",","."));
+      let totalComFrete = String(valorProduto+fretes[data.uf]);
+      totalComFrete = totalComFrete.includes(".") ? totalComFrete.replace(".",",") : totalComFrete + ",00";
+      valueProduct.innerText = `TOTAL ${totalComFrete}`;
     }
 });
