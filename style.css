@@ -217,6 +217,7 @@ input[type=number]::-webkit-inner-spin-button {
     align-items: center;
     justify-content: space-evenly;
     width: 50%;
+    padding: 20px;
 }
 
 .detailsLeft .view img{
@@ -244,6 +245,7 @@ input[type=number]::-webkit-inner-spin-button {
     height: 40px;
     outline: 0.1px solid lightgray;
     padding-left: 10px;
+    margin-bottom: 10px;
 }
 
 #buttonFrete {
@@ -278,4 +280,9 @@ input[type=number]::-webkit-inner-spin-button {
 
 #buttonComprar:hover {
     background-color: rgb(16, 142, 201);
+}
+
+#valorFrete {
+    width: 100%;
+    height: 80px;
 }

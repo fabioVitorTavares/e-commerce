@@ -173,6 +173,10 @@ const product = document.querySelector('.product');
 const viewDetailsProduct = document.querySelector( '.view-details-product');
 const contentDetailsLeft = document.querySelector('.contentDetailsLeft');
 const valueProduct = document.querySelector('.valorTotal');
+const buttonFrete = document.querySelector('#buttonFrete');
+const inputCEP = document.querySelector('#inputCEP');
+const valorFrete = document.querySelector('#valorFrete');
+
 let priceElement = "";
 function focusProduct(element) {   
 
@@ -184,7 +188,7 @@ function focusProduct(element) {
   
   priceElement = element.innerText;
   priceElement =  priceElement.slice(priceElement.indexOf('$')-1)
-  valueProduct.innerText = `TOTAL ${priceElement}`;
+  valueProduct.innerText = `Total ${priceElement}`;
   console.log(priceElement);
 };
 
@@ -193,15 +197,14 @@ document.addEventListener('mouseup', function(e) {
     if (!viewDetailsProduct.contains(e.target)) {
         viewDetailsProduct.style.display = 'none';
         main.style = "opacity: 1";
-        header.style = "opacity: 1";       
+        header.style = "opacity: 1";  
+        
+        inputCEP.value = "";
+        valorFrete.innerText = "";
+
     }
 });
 
-
-
-const buttonFrete = document.querySelector('#buttonFrete');
-const inputCEP = document.querySelector('#inputCEP');
-const valorFrete = document.querySelector('#valorFrete');
 
 const fretes = {
   AC: 200,
@@ -238,10 +241,10 @@ buttonFrete.addEventListener('click', async () =>{
         
     if(!data.erro){
       console.log(data);
-      valorFrete.innerText = `Frete para ${data.localidade} - ${data.uf}: R$${fretes[data.uf]},00`;
+      valorFrete.innerHTML = `${data.localidade} - ${data.uf} <br> Frete R$${fretes[data.uf]},00`;
       const valorProduto = Number(priceElement.slice(priceElement.indexOf('$')+1).replace(",","."));
       let totalComFrete = String(valorProduto+fretes[data.uf]);
       totalComFrete = totalComFrete.includes(".") ? totalComFrete.replace(".",",") : totalComFrete + ",00";
-      valueProduct.innerText = `TOTAL ${totalComFrete}`;
+      valueProduct.innerText = `Total R$ ${totalComFrete}`;
     }
 });
